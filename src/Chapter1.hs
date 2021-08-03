@@ -14,7 +14,7 @@ Practice your functional skills, and choose your class in the end, who you want
 to become: Monad Wizard, Exceptions Crusher, Recursion Priest, Free Fighter,
 Composition Warlock, and many more!
 
-Here is how it works:
+Here is how it works:👀
 
  ★ Make sure that you familiarise yourself with this repo's README in order to
    understand why and what we are trying to achieve with this.
@@ -429,6 +429,8 @@ task is to specify the type of this function.
 49
 -}
 
+import Control.Arrow (Arrow(second))
+squareSum :: Num a => a -> a -> a
 squareSum x y = (x + y) * (x + y)
 
 
@@ -436,6 +438,7 @@ squareSum x y = (x + y) * (x + y)
 =⚔️= Task 4
 
 Implement the function that takes an integer value and returns the next 'Int'.
+
 
 >>> next 10
 11
@@ -449,7 +452,7 @@ Implement the function that takes an integer value and returns the next 'Int'.
   function body with the proper implementation.
 -}
 next :: Int -> Int
-next x = error "next: not implemented!"
+next x = x + 1
 
 {- |
 After you've implemented the function (or even during the implementation), you
@@ -490,7 +493,8 @@ Implement a function that returns the last digit of a given number.
   whether it works for you!
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-lastDigit n = error "lastDigit: Not implemented!"
+lastDigit :: Integral a => a -> a
+lastDigit n = n `mod` 10
 
 
 {- |
@@ -520,15 +524,15 @@ branches because it is an expression and it must always return some value.
   satisfying the check will be returned and, therefore, evaluated.
 -}
 closestToZero :: Int -> Int -> Int
-closestToZero x y = error "closestToZero: not implemented!"
+closestToZero x y = if abs x < abs y then x else y
 
 
 {- |
 =⚔️= Task 7
 Write a function that returns the middle number among three given numbers.
 
->>> mid 3 1 2
-2
+>>> mid 3 17 5
+NOW 5
 
 🕯 HINT: When checking multiple conditions, it is more convenient to use the
   language construct called "guards" instead of multiple nested 'if-then-else'
@@ -554,7 +558,14 @@ value after "=" where the condition is true.
 Casual reminder about adding top-level type signatures for all functions :)
 -}
 
-mid x y z = error "mid: not implemented!"
+mid :: Ord a => a -> a -> a -> a
+mid x y z
+  | max' /= x && min' /= x = x
+  | max' /= y && min' /= y = y
+  | otherwise = z
+    where
+      max' = max x (max y z)
+      min' = min x (min y z)
 
 {- |
 =⚔️= Task 8
@@ -568,7 +579,13 @@ True
 >>> isVowel 'x'
 False
 -}
-isVowel c = error "isVowel: not implemented!"
+isVowel :: Char -> Bool
+isVowel c
+  | c `in'` ['a', 'e', 'i', 'o', 'u'] = True
+  | otherwise = False
+    where
+      char `in'` [] = False
+      char `in'` (x:xs) = char == x || char `in'` xs
 
 
 {- |
@@ -622,17 +639,21 @@ Just remember to keep proper indentation.
 Implement a function that returns the sum of the last two digits of a number.
 
 >>> sumLast2 42
-6
+NOW 6
 >>> sumLast2 134
-7
+NOW 7
 >>> sumLast2 1
-1
+NOW 1
 
 Try to introduce variables in this task (either with let-in or where) to avoid
 specifying complex expressions.
 -}
 
-sumLast2 n = error "sumLast2: Not implemented!"
+sumLast2 :: Integral a => a -> a
+sumLast2 n = first n + second n
+  where
+    first n = n `mod` 10
+    second n = (n `mod` 100) `div` 10
 
 
 {- |
@@ -653,7 +674,8 @@ You need to use recursion in this task. Feel free to return to it later, if you
 aren't ready for this boss yet!
 -}
 
-firstDigit n = error "firstDigit: Not implemented!"
+firstDigit :: Integral t => t -> t
+firstDigit n = if n < 10 then n else firstDigit $ n `div` 10
 
 
 {-
