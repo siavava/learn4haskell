@@ -209,31 +209,47 @@ So, the output in this example means that 'False' has type 'Bool'.
 > Try to guess first and then compare your expectations with GHCi output
 
 >>> :t True
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW True :: Bool
+NOW True :: Bool
 >>> :t 'a'
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW 'a' :: Char
+NOW 'a' :: Char
 >>> :t 42
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW 42 :: Num p => p
+NOW 42 :: Num p => p
 
 A pair of boolean and char:
 >>> :t (True, 'x')
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW (True, 'x') :: (Bool, Char)
+NOW (True, 'x') :: (Bool, Char)
 
 Boolean negation:
 >>> :t not
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW not :: Bool -> Bool
+NOW not :: Bool -> Bool
 
 Boolean 'and' operator:
 >>> :t (&&)
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW (&&) :: Bool -> Bool -> Bool
+NOW (&&) :: Bool -> Bool -> Bool
 
 Addition of two numbers:
 >>> :t (+)
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW (+) :: Num a => a -> a -> a
+NOW (+) :: Num a => a -> a -> a
 
 Maximum of two values:
 >>> :t max
-<INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS WAS <INSERT THE RESULT INSTEAD OF THE TEXT>
+WAS NOW max :: Ord a => a -> a -> a
+NOW max :: Ord a => a -> a -> a
 
 You might not understand each type at this moment, but don't worry! You've only
 started your Haskell journey. Types will become your friends soon.
@@ -429,7 +445,6 @@ task is to specify the type of this function.
 49
 -}
 
-import Control.Arrow (Arrow(second))
 squareSum :: Num a => a -> a -> a
 squareSum x y = (x + y) * (x + y)
 
@@ -639,10 +654,13 @@ Just remember to keep proper indentation.
 Implement a function that returns the sum of the last two digits of a number.
 
 >>> sumLast2 42
+WAS NOW 6
 NOW 6
 >>> sumLast2 134
+WAS NOW 7
 NOW 7
 >>> sumLast2 1
+WAS NOW 1
 NOW 1
 
 Try to introduce variables in this task (either with let-in or where) to avoid
