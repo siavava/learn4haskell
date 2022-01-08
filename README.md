@@ -1,6 +1,6 @@
 # learn4haskell
 
-![Learn4Haskell](/images/HacktoberFest2020-Learn4Haskell-Banner.png)
+![Learn4Haskell](/images/HacktoberFest2021-Learn4Haskell-Banner.png)
 
 🚨 __Important notice: This course continues BAU even after Hacktoberfest__ 🚨
 
@@ -200,6 +200,18 @@ If you don't have any IDE preferences, we recommend installing
 [Haskell plugin](https://marketplace.visualstudio.com/items?itemName=haskell.haskell).
 The mentioned plugin would give you everything required to immediately start coding with Haskell.
 
+### Gitpod
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/kowainik/learn4haskell)
+
+[Gitpod](https://www.gitpod.io/) is a VSCode-based Web IDE.
+With it, you can get a Haskell environment out-of-the-box.
+It's free to use up to 50 hours per month.
+
+Just prepend `gitpod.io#` to your repo URL and you are ready to go.
+It will take some time to initialize the workspace for the first time it opens.
+It only keeps changes under `/workspace`, and it will be deleted after a period of inactivity unless it's pinned.
+
 ### How to develop
 
 The course assumes that you install Haskell tooling (GHC and Cabal), edit code
@@ -227,7 +239,7 @@ Similar commands are provided for all chapters from One to Four.
 
 ## Who we are
 
-[Veronika (@vrom911)](https://vrom911.github.com/) and
+[Veronika (@vrom911)](https://vrom911.github.io/) and
 [Dmitrii (@chshersh)](https://kodimensional.dev/) are experienced Haskell developers.
 Together we drive this open source organisation —
 [Kowainik](https://kowainik.github.io/). We have a lot of open source projects
